@@ -1,0 +1,108 @@
+@import "../../Styles/variables";
+
+.main_sidebar_container {
+  width: 260px;
+  height: 100vh;
+  background: #fff;
+
+  .inner_sidebar_container {
+    width: 90%;
+    height: 100%;
+    margin: 0px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    .sidebar_logo_container {
+      padding: 20px 0px;
+      width: 100%;
+
+      h2 {
+        width: 100%;
+        color: $primary-color;
+        font-size: 1.4rem;
+        font-weight: 700;
+        margin: 0px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        text-transform: uppercase;
+
+        span {
+          height: 45px;
+          width: 45px;
+          background: $primary-color;
+          color: #fff;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 50%;
+          margin-right: 5px;
+          text-transform: lowercase;
+          font-size: 3rem;
+          transform: rotate(-45deg);
+        }
+      }
+    }
+
+    .sidebar_items_container {
+      width: 100%;
+      flex: 1;
+
+      .side_bar_nav_items {
+        padding: 10px 0px;
+
+        a {
+          text-decoration: none;
+
+          .sidebar_item_box {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin-bottom: 15px;
+            padding: 8px;
+            border-radius: 10px;
+
+            &.active {
+              background: #fff;
+              -webkit-box-shadow: 0px 0px 63px 4px rgba(235, 235, 235, 1);
+              -moz-box-shadow: 0px 0px 63px 4px rgba(235, 235, 235, 1);
+              box-shadow: 0px 0px 63px 4px rgba(235, 235, 235, 1);
+
+              label {
+                color: $yellow;
+              }
+
+              h4 {
+                color: $primary-color;
+                font-weight: 600;
+              }
+            }
+
+            label {
+              height: 40px;
+              width: 40px;
+              background: transparent;
+              border-radius: 5px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 1.4rem;
+              color: $gray;
+              margin-right: 10px;
+            }
+
+            h4 {
+              font-size: 1rem;
+              color: $gray;
+              font-weight: 500;
+            }
+          }
+        }
+      }
+    }
+  }
+}

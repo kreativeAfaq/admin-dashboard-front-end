@@ -1,0 +1,158 @@
+@import "../../Styles/variables";
+
+.main_table_user_container {
+  width: 100%;
+  background: #fff;
+  border: 1px solid $lightGray;
+  border-radius: 14px;
+  -webkit-box-shadow: 0px 0px 63px 4px rgba(235, 235, 235, 1);
+  -moz-box-shadow: 0px 0px 63px 4px rgba(235, 235, 235, 1);
+  box-shadow: 0px 0px 63px 4px rgba(235, 235, 235, 1);
+  overflow: hidden;
+
+  .inner_user_table_container {
+    width: 100%;
+
+    .main_table_headings {
+      width: 100%;
+      padding: 30px 0px 20px 0px;
+      display: grid;
+      grid-template-columns: 5% 20% 15% 15% 15% 15% 15%;
+
+      .table_head_bx {
+        width: 95%;
+        margin: 0px auto;
+        text-align: center;
+
+        input {
+          appearance: none;
+          height: 20px;
+          width: 20px;
+          cursor: pointer;
+          border: 1.5px solid $mediumGray;
+          border-radius: 4px;
+
+          &::before {
+            content: "✔";
+            font-size: 15px;
+            color: #fff;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+
+          &:checked::before {
+            background: $yellow;
+          }
+
+          &:checked {
+            border-color: $yellow;
+          }
+        }
+
+        h2 {
+          font-size: 1rem;
+          font-weight: 650;
+          color: $primary-color;
+          margin: 0px;
+        }
+
+        &:nth-child(2) {
+          text-align: start;
+        }
+      }
+    }
+
+    .main_table_body_container {
+      width: 100%;
+
+      .table_user_details_grid {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 5% 20% 15% 15% 15% 15% 15%;
+        background: #f9f9f9;
+        padding: 14px 0px;
+        border-top: 1px solid $lightGray;
+
+        &:nth-child(even) {
+          background: #fff;
+        }
+
+        .user_table_details_bx {
+          width: 95%;
+          margin: 0px auto;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          input {
+            appearance: none;
+            height: 18px;
+            width: 18px;
+            cursor: pointer;
+            border: 1.5px solid $mediumGray;
+            border-radius: 4px;
+
+            &::before {
+              content: "✔";
+              font-size: 15px;
+              color: transparent;
+              width: 100%;
+              height: 100%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+
+            &:checked::before {
+              background: $yellow;
+              color: #fff;
+            }
+
+            &:checked {
+              border-color: $yellow;
+            }
+          }
+
+          .profile_pic_user_table {
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
+
+          h2 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: $primary-color;
+            margin: 0px;
+          }
+
+          .view_more_user_table {
+            color: $yellow;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+
+          &:nth-child(2) {
+            justify-content: flex-start;
+          }
+        }
+      }
+    }
+  }
+}
