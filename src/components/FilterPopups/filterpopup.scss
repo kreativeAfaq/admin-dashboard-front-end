@@ -1,0 +1,178 @@
+@import "../../Styles/variables";
+
+.main_filter_popup_container {
+  position: absolute;
+  top: 120%;
+  right: 0px;
+  min-width: 350px;
+  width: 100%;
+  background: #fff;
+  border: 1px solid $lightGray;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 0px 63px 4px rgba(235, 235, 235, 1);
+  -moz-box-shadow: 0px 0px 63px 4px rgba(235, 235, 235, 1);
+  box-shadow: 0px 0px 63px 4px rgba(235, 235, 235, 1);
+
+  .inner_filter_popup_container {
+    width: 100%;
+
+    .filter_popup_header {
+      width: 100%;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(230, 230, 230);
+
+      h2 {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: $primary-color;
+        margin: 0px;
+      }
+
+      label {
+        height: 30px;
+        width: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: $primary-color;
+        margin: 0px;
+      }
+    }
+
+    .inner_filter_body_container {
+      width: 100%;
+
+      .filter_drop_down {
+        width: 100%;
+        position: relative;
+
+        &:nth-last-child(1) {
+          .filter_drop_down_head {
+            border-bottom: none;
+          }
+
+          .filter_drop_down_body {
+            .filter_drop_down_inner_body {
+              .filter_item_bx {
+                &:nth-last-child(1) {
+                  border: none;
+                }
+              }
+            }
+          }
+        }
+
+        &.active {
+          .filter_drop_down_body {
+            max-height: 1000px;
+            transition: 0.2s linear;
+          }
+
+          &:nth-last-child(1) {
+            .filter_drop_down_head {
+              border-bottom: 1px solid rgba(230, 230, 230);
+            }
+          }
+        }
+
+        .filter_drop_down_head {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 12px 20px;
+          border-bottom: 1px solid rgba(230, 230, 230);
+          cursor: pointer;
+
+          h2 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: $primary-color;
+            margin: 0px;
+          }
+
+          label {
+            height: 30px;
+            width: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            color: $primary-color;
+            margin: 0px;
+          }
+        }
+
+        .filter_drop_down_body {
+          width: 100%;
+          height: 100%;
+          position: relative;
+          max-height: 0px;
+          overflow: hidden;
+          transition: 0.2s linear;
+
+          .filter_drop_down_inner_body {
+            width: 100%;
+
+            .filter_item_bx {
+              padding: 14px 20px;
+              display: flex;
+              align-items: center;
+              justify-content: flex-start;
+              cursor: pointer;
+              border-bottom: 1px solid rgba(230, 230, 230);
+
+              input {
+                appearance: none;
+                height: 18px;
+                width: 18px;
+                cursor: pointer;
+                border: 1.5px solid rgba(230, 230, 230);
+                border-radius: 4px;
+                margin-right: 15px;
+
+                &::before {
+                  content: "✔";
+                  font-size: 15px;
+                  color: transparent;
+                  width: 100%;
+                  height: 100%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                }
+
+                &:checked::before {
+                  background: $yellow;
+                  color: #fff;
+                }
+
+                &:checked {
+                  border-color: $yellow;
+                }
+              }
+
+              label {
+                flex: 1;
+                font-size: 1rem;
+                color: $primary-color;
+                font-weight: 600;
+                margin: 0px !important;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                pointer-events: all !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
