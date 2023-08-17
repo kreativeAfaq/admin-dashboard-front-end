@@ -27,41 +27,6 @@ export const options_styles = {
   }),
 };
 
-export const ManagmentLablesData = [
-  { id: "schools", singular: "School", Label: "Schools", type: 1 },
-  { id: "colleges", singular: "College", Label: "Colleges", type: 2 },
-  {
-    id: "universities",
-    singular: "University",
-    Label: "Universities",
-    type: 3,
-  },
-];
-
-export const ManagmentStaffLablesData = [
-  {
-    id: "teachers",
-    singular: "Teacher",
-    Label: "Teachers",
-    role: 1,
-    filter: "teacher",
-  },
-  {
-    id: "students",
-    singular: "Student",
-    Label: "Students",
-    role: 2,
-    filter: "student",
-  },
-  {
-    id: "staff",
-    singular: "Staff Member",
-    Label: "Staff Members",
-    role: 3,
-    filter: "staff",
-  },
-];
-
 export const GenderOptions = [
   { label: "Male", value: "male" },
   { label: "Female", value: "female" },
@@ -176,4 +141,29 @@ export const mandalData = [
 export const villageData = [
   { label: "Chilakalapudi", value: "chilakalapudi" },
   { label: "Gundupalem", value: "gundupalem" },
+];
+
+export const classesOptions = [
+  {
+    name: "schools",
+    classes: [
+      { label: "Upto 5th Class", value: 5 },
+      { label: "Upto 10th Class", value: 10 },
+      { label: "Upto 12th Class", value: 12 },
+    ],
+  },
+  {
+    name: "colleges",
+    classes: [
+      { label: "Upto 12th Class", value: 12 },
+      { label: "Upto 14th Class", value: 14 },
+    ],
+  },
+  {
+    name: "universities",
+    classes: [
+      { label: "Upto 16th Class", value: 16 },
+      { label: "Upto 18th Class", value: 18 },
+    ],
+  },
 ];

@@ -2,13 +2,14 @@ import React, { useState } from "react";
 import "./createpopups.scss";
 import Select from "react-select";
 import {
+  classesOptions,
   mandalData,
   options_styles,
   statesData,
   villageData,
 } from "../../utils/globalOptions";
 
-function CreateProduct({ onClosePopup }) {
+function CreateProduct({ onClosePopup, managmentData }) {
   const [values, setValues] = useState();
   const [Image, setImage] = useState();
 
@@ -24,7 +25,7 @@ function CreateProduct({ onClosePopup }) {
     <div className="mainPopupContainer">
       <div className="innerPopupContainer">
         <div className="popupHeader">
-          <h2>Create New Product</h2>
+          <h2>Create New {managmentData?.singular}</h2>
           <label onClick={onClosePopup}>
             <ion-icon name="close"></ion-icon>
           </label>
@@ -55,7 +56,7 @@ function CreateProduct({ onClosePopup }) {
             <div className="inputBx">
               <input
                 type="text"
-                placeholder="School Name"
+                placeholder={`${managmentData.singular} Name`}
                 name="title"
                 onChange={HandleFormValues}
               />
@@ -101,10 +102,23 @@ function CreateProduct({ onClosePopup }) {
                 options={villageData}
               />
             </div>
+            <div className="inputBx">
+              <Select
+                placeholder="Classes"
+                styles={options_styles}
+                name="classes"
+                onChange={(e) => HandleFormValues(e, "classes")}
+                options={
+                  classesOptions?.filter(
+                    (item) => item.name === managmentData.id
+                  )[0]?.classes
+                }
+              />
+            </div>
           </div>
 
           <div className="popupCtaBtns">
-            <button>Cancel</button>
+            <button>Reset</button>
             <button>Submit</button>
           </div>
         </div>

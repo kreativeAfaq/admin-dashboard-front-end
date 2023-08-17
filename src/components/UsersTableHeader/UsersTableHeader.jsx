@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import "./userstableheader.scss";
 import SearchBox from "../SearchBox/SearchBox";
 import DeletePopup from "../DeletePopup/DeletePopup";
-import CreateUser from "../CreatePopups/CreateUser";
 import FilterPopup from "../FilterPopups/FilterPopup";
+import CreateProduct from "../CreatePopups/CreateProduct";
 
-const UsersTableHeader = () => {
+const UsersTableHeader = ({ buttonTitle, managmentData }) => {
   const [isCreatePopup, setIsCreatePopup] = useState(false);
   const [isDeletePopup, setIsDeletePopup] = useState(false);
   const [isFilterPopup, setIsFilterPopup] = useState(false);
@@ -31,7 +31,7 @@ const UsersTableHeader = () => {
               <label>
                 <ion-icon name="add"></ion-icon>
               </label>
-              Add New Student
+              Add New {buttonTitle}
             </button>
           </div>
           <div className="right_users_filter_header">
@@ -57,7 +57,12 @@ const UsersTableHeader = () => {
         </div>
       </div>
       {isDeletePopup && <DeletePopup onClosePopup={toggleDeletePopup} />}
-      {isCreatePopup && <CreateUser onClosePopup={toggleCreatePopup} />}
+      {isCreatePopup && (
+        <CreateProduct
+          managmentData={managmentData}
+          onClosePopup={toggleCreatePopup}
+        />
+      )}
     </>
   );
 };

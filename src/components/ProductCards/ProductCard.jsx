@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const ProductCard = () => {
   return (
     <div className="mainproductCard">
-      <Link to="/view/product/1">
+      <Link to="/view/managment/1">
         <div className="productCardImageBx">
           <img src={require("../../media/user.jpeg")} alt="" />
         </div>

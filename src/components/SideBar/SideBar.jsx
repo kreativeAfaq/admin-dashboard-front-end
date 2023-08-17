@@ -1,9 +1,12 @@
 import React from "react";
 import "./sidebar.scss";
 import routes from "../../utils/routes";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const SideBar = () => {
+  const location = useLocation();
+  let pathName = location.pathname.split("/").pop();
+
   return (
     <div className="main_sidebar_container">
       <div className="inner_sidebar_container">
@@ -15,13 +18,12 @@ const SideBar = () => {
 
         <div className="sidebar_items_container">
           <div className="side_bar_nav_items">
-            {/* NAV ITEM BX */}
             {routes?.map((item) => {
               return (
                 <Link to={item?.route} key={item?.route}>
                   <div
                     className={`sidebar_item_box ${
-                      window.location.pathname === item?.route ? "active" : ""
+                      pathName === item?.routeId ? "active" : ""
                     }`}
                   >
                     <label>
@@ -32,8 +34,6 @@ const SideBar = () => {
                 </Link>
               );
             })}
-
-            {/* NAV ITEM BX */}
           </div>
         </div>
       </div>

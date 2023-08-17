@@ -18,7 +18,7 @@ function CreateUser({ onClosePopup }) {
     <div className="mainPopupContainer">
       <div className="innerPopupContainer">
         <div className="popupHeader">
-          <h2>Create New User</h2>
+          <h2>Create Admin</h2>
           <label onClick={onClosePopup}>
             <ion-icon name="close"></ion-icon>
           </label>
